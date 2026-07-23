@@ -1,0 +1,84 @@
+# Y STEM and Chess Mobile
+
+This repository contains the new Y STEM and Chess mobile application. It is a
+fresh Expo and React Native TypeScript project; using the previous TritonSE
+application as a reference.
+
+## Prerequisites
+
+- Node.js 24 LTS. The repository pins Node `24.18.0` in `.nvmrc`.
+- npm 11.
+- Android Studio and an Android emulator for Android development. (download Android Studo, add virtual device)
+- macOS, Xcode, and an iOS simulator for local iOS development.
+
+If you use `nvm`, select the pinned Node version:
+
+```bash
+nvm install
+nvm use
+```
+
+## Install
+
+From the repository root:
+
+```bash
+npm ci
+```
+
+The committed `package-lock.json` is the source of truth for dependency
+versions.
+
+## Start the app
+
+Start the Expo development server:
+
+```bash
+npm start
+```
+
+Launch a configured Android emulator:
+
+```bash
+npm run android
+```
+
+Launch an iOS simulator on macOS:
+
+```bash
+npm run ios
+```
+
+## Quality checks
+
+Run all required local checks before opening a pull request:
+
+```bash
+npm run format:check
+npm run lint
+npm run typecheck
+npm test -- --runInBand
+npx expo config --type public
+```
+
+To format supported files:
+
+```bash
+npm run format
+```
+
+Tests belong outside `app/` because every file under `app/` is interpreted as
+an Expo Router route.
+
+## Project structure
+
+```text
+app/                 Expo Router layouts and route entry points
+src/components/      Shared, product-neutral UI components
+test/                Tests and future shared test utilities
+Context/             Approved foundation planning documents
+```
+
+Route files should remain small. Business logic, API calls, storage, and other
+external integrations will be introduced in separately reviewed feature or
+foundation pull requests.
