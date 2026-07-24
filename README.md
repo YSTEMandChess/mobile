@@ -70,12 +70,20 @@ npm run format
 Tests belong outside `app/` because every file under `app/` is interpreted as
 an Expo Router route.
 
+## Continuous integration
+
+GitHub Actions runs the required formatting, linting, TypeScript, and test
+checks for every pull request and for pushes to `main`. CI installs the exact
+versions in `package-lock.json` with `npm ci` and uses the Node version pinned
+in `.nvmrc`.
+
 ## Project structure
 
 ```text
 app/                 Expo Router layouts and route entry points
 src/components/      Shared, product-neutral UI components
-test/                Tests and future shared test utilities
+src/utils/           Small, product-neutral utility functions
+test/                Tests and shared Jest setup
 Context/             Approved foundation planning documents
 ```
 
