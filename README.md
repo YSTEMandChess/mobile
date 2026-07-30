@@ -29,6 +29,26 @@ npm ci
 The committed `package-lock.json` is the source of truth for dependency
 versions.
 
+## Configure the environment
+
+Copy the example environment file before starting the app:
+
+```powershell
+Copy-Item .env.example .env.local
+```
+
+On macOS or Linux:
+
+```bash
+cp .env.example .env.local
+```
+
+The example targets a backend running on the Windows host from an Android
+emulator. Update the API URL for a different platform or environment. The app
+validates its public configuration at startup and reports missing, malformed,
+or unsafe values. See [Environment configuration](docs/environments.md) for
+the supported profiles and platform-specific URLs.
+
 ## Start the app
 
 Start the Expo development server:
@@ -82,8 +102,10 @@ in `.nvmrc`.
 ```text
 app/                 Expo Router layouts and route entry points
 src/components/      Shared, product-neutral UI components
+src/config/          Validated public application configuration
 src/utils/           Small, product-neutral utility functions
 test/                Tests and shared Jest setup
+docs/                Contributor and architecture documentation
 Context/             Approved foundation planning documents
 ```
 

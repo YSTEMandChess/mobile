@@ -15,7 +15,9 @@ expo-env.d.ts
 coverage/
 
 # Local environment files
-.env*.local
+.env
+.env.*
+!.env.example
 
 # Debug logs
 npm-debug.*
@@ -32,4 +34,3 @@ yarn-error.*
 # Tooling and operating systems
 .DS_Store
 *.tsbuildinfo
-
