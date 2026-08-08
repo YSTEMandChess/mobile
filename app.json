@@ -1,0 +1,14 @@
+{
+  "expo": {
+    "name": "Y STEM and Chess",
+    "slug": "ystem-and-chess",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "ystemandchess",
+    "userInterfaceStyle": "light",
+    "plugins": ["expo-router"],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
