@@ -1,5 +1,9 @@
-import { StyleSheet, Text, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { StyleSheet, View } from 'react-native';
+
+import { AppText } from '@/components/ui/AppText';
+import { Screen } from '@/components/ui/Screen';
+import { theme } from '@/design/theme';
+import { radii, spacing } from '@/design/tokens';
 
 type PlaceholderScreenProps = {
   title: string;
@@ -7,39 +11,39 @@ type PlaceholderScreenProps = {
 
 export function PlaceholderScreen({ title }: PlaceholderScreenProps) {
   return (
-    <SafeAreaView style={styles.safeArea}>
-      <View style={styles.container}>
-        <Text accessibilityRole="header" style={styles.title}>
+    <Screen background="patterned" centered>
+      <View style={styles.card}>
+        <AppText style={styles.title} variant="title">
           {title}
-        </Text>
-        <Text style={styles.description}>
+        </AppText>
+        <AppText color="muted" style={styles.description}>
           This section will be added in a future release.
-        </Text>
+        </AppText>
       </View>
-    </SafeAreaView>
+    </Screen>
   );
 }
 
 const styles = StyleSheet.create({
-  safeArea: {
-    flex: 1,
-    backgroundColor: '#ffffff',
-  },
-  container: {
-    flex: 1,
+  card: {
     alignItems: 'center',
-    justifyContent: 'center',
-    padding: 24,
+    backgroundColor: theme.colors.surfaceStrong,
+    borderColor: theme.colors.brandSoft,
+    borderRadius: radii.xl,
+    borderWidth: 1,
+    elevation: 3,
+    padding: spacing.xl,
+    shadowColor: theme.colors.text,
+    shadowOffset: { height: 3, width: 0 },
+    shadowOpacity: 0.12,
+    shadowRadius: 8,
+    width: '100%',
   },
   title: {
-    color: '#111827',
-    fontSize: 28,
-    fontWeight: '700',
+    textAlign: 'center',
   },
   description: {
-    marginTop: 12,
-    color: '#4b5563',
-    fontSize: 16,
+    marginTop: spacing.sm,
     textAlign: 'center',
   },
 });

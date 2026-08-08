@@ -1,14 +1,14 @@
 # Y STEM and Chess Mobile
 
 This repository contains the new Y STEM and Chess mobile application. It is a
-fresh Expo and React Native TypeScript project; using the previous TritonSE
-application as a reference.
+fresh Expo SDK 57 and React Native TypeScript project that uses the previous
+TritonSE application as a reference.
 
 ## Prerequisites
 
 - Node.js 24 LTS. The repository pins Node `24.18.0` in `.nvmrc`.
 - npm 11.
-- Android Studio and an Android emulator for Android development. (download Android Studo, add virtual device)
+- Android Studio and a configured Android emulator for Android development.
 - macOS, Xcode, and an iOS simulator for local iOS development.
 
 If you use `nvm`, select the pinned Node version:
@@ -49,6 +49,10 @@ validates its public configuration at startup and reports missing, malformed,
 or unsafe values. See [Environment configuration](docs/environments.md) for
 the supported profiles and platform-specific URLs.
 
+The reusable colors, typography scale, layout surfaces, buttons, loading, and
+feedback components are documented in the
+[mobile design system](docs/design-system.md).
+
 ## Start the app
 
 Start the Expo development server:
@@ -57,7 +61,7 @@ Start the Expo development server:
 npm start
 ```
 
-Launch a configured Android emulator:
+With a configured Android emulator running, open the app on Android:
 
 ```bash
 npm run android
@@ -101,12 +105,17 @@ in `.nvmrc`.
 
 ```text
 app/                 Expo Router layouts and route entry points
-src/components/      Shared, product-neutral UI components
+src/assets/          Mobile images and other bundled visual assets
+src/components/ui/   Shared, product-neutral UI components
+src/components/feedback/  Reusable error and connection feedback
 src/config/          Validated public application configuration
+src/design/          Brand tokens and the semantic light theme
+src/types/           Shared TypeScript declarations
 src/utils/           Small, product-neutral utility functions
 test/                Tests and shared Jest setup
 docs/                Contributor and architecture documentation
 Context/             Approved foundation planning documents
+AGENTS.md            Repository boundaries and contributor working rules
 ```
 
 Route files should remain small. Business logic, API calls, storage, and other
