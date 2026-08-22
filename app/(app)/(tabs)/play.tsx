@@ -1,5 +1,5 @@
-import { PlaceholderScreen } from '@/components/PlaceholderScreen';
+import { SessionPlaceholderScreen } from '@/components/SessionPlaceholderScreen';
 
 export default function PlayRoute() {
-  return <PlaceholderScreen title="Play" />;
+  return <SessionPlaceholderScreen title="Play" />;
 }

@@ -1,5 +1,5 @@
-import { PlaceholderScreen } from '@/components/PlaceholderScreen';
+import { SessionPlaceholderScreen } from '@/components/SessionPlaceholderScreen';
 
 export default function LearnRoute() {
-  return <PlaceholderScreen title="Learn" />;
+  return <SessionPlaceholderScreen title="Learn" />;
 }
