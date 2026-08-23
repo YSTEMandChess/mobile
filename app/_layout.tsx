@@ -4,15 +4,18 @@ import { StatusBar } from 'expo-status-bar';
 import { Screen } from '@/components/ui/Screen';
 import { Spinner } from '@/components/ui/Spinner';
 import { SessionProvider, useSession } from '@/providers/SessionProvider';
+import { QueryProvider } from '@/providers/QueryProvider';
 
 import '@/config/env';
 
 export default function RootLayout() {
   return (
-    <SessionProvider>
-      <RootNavigator />
-      <StatusBar style="dark" />
-    </SessionProvider>
+    <QueryProvider>
+      <SessionProvider>
+        <RootNavigator />
+        <StatusBar style="dark" />
+      </SessionProvider>
+    </QueryProvider>
   );
 }
 
