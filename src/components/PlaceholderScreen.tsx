@@ -4,12 +4,18 @@ import { AppText } from '@/components/ui/AppText';
 import { Screen } from '@/components/ui/Screen';
 import { theme } from '@/design/theme';
 import { radii, spacing } from '@/design/tokens';
+import type { PropsWithChildren } from 'react';
 
-type PlaceholderScreenProps = {
+type PlaceholderScreenProps = PropsWithChildren<{
+  description?: string;
   title: string;
-};
+}>;
 
-export function PlaceholderScreen({ title }: PlaceholderScreenProps) {
+export function PlaceholderScreen({
+  children,
+  description = 'This section will be added in a future release.',
+  title,
+}: PlaceholderScreenProps) {
   return (
     <Screen background="patterned" centered>
       <View style={styles.card}>
@@ -17,8 +23,9 @@ export function PlaceholderScreen({ title }: PlaceholderScreenProps) {
           {title}
         </AppText>
         <AppText color="muted" style={styles.description}>
-          This section will be added in a future release.
+          {description}
         </AppText>
+        {children ? <View style={styles.actions}>{children}</View> : null}
       </View>
     </Screen>
   );
@@ -45,5 +52,10 @@ const styles = StyleSheet.create({
   description: {
     marginTop: spacing.sm,
     textAlign: 'center',
+  },
+  actions: {
+    gap: spacing.sm,
+    marginTop: spacing.lg,
+    width: '100%',
   },
 });
