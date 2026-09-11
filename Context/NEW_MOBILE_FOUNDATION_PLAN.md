@@ -4,7 +4,7 @@
 
 **Approved direction:** Option B — create a fresh Expo/React Native TypeScript application and selectively reuse or rebuild useful TritonSE work.
 
-**Implementation status:** The new mobile foundation has been implemented through F4 in the current development branch. F5 is the next planned foundation PR. This document remains the approved architecture roadmap; the current code and reviewed pull requests are the source of truth for implementation status.
+**Implementation status:** The mobile application shell has been implemented and merged through F5. F6, covering the HTTP client, schemas, errors, and logging, is the next planned foundation PR. This document remains the approved architecture roadmap; GitHub Issues, the project board, the current code, and reviewed pull requests are the source of truth for active work and implementation status.
 
 **Design reference:** The approved [Y STEM and Chess Figma file](https://www.figma.com/design/gl5WU4uDZ6X85VYUiK780L/Y-STEM-and-Chess--Copy-?node-id=114-4404&p=f) provides the current visual direction. Because it is primarily website-oriented, mobile-specific layouts, flows, typography, and accessibility states still require explicit review.
 
